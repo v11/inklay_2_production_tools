@@ -1,0 +1,6 @@
+# Secrets
+service_accounts/
+.env
+
+# Node stuff
+node_modules/
