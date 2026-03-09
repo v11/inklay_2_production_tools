@@ -44,8 +44,7 @@ dotenv.config({ path: path.join(__dirname, ".env") });
 const DATABASE_URL = process.env.FIREBASE_DB_URL;
 const PEPPER = process.env.DEVICE_SECRET_PEPPER;
 
-// Put your service account filename here (or keep multiple and set via env)
-const SERVICE_ACCOUNT_FILENAME = process.env.SERVICE_ACCOUNT_FILENAME || "inklay-2-beta-firebase-adminsdk-fbsvc-3f1143e230.json";
+const SERVICE_ACCOUNT_FILENAME = process.env.SERVICE_ACCOUNT_FILENAME;
 
 const SERVICE_ACCOUNT_PATH = path.join(__dirname,"service_accounts", SERVICE_ACCOUNT_FILENAME);
 
@@ -55,6 +54,9 @@ if (!DATABASE_URL) {
 }
 if (!PEPPER) {
   throw new Error("Missing DEVICE_SECRET_PEPPER in .env.");
+}
+if (!SERVICE_ACCOUNT_FILENAME) {
+  throw new Error("Missing SERVICE_ACCOUNT_FILENAME in .env.");
 }
 if (!fs.existsSync(SERVICE_ACCOUNT_PATH)) {
   throw new Error(`Service account JSON not found: ${SERVICE_ACCOUNT_PATH}`);

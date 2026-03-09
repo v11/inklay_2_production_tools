@@ -1,6 +1,8 @@
 # Secrets
 service_accounts/
 .env
+.env.beta
+.env.production
 
 # Node stuff
 node_modules/

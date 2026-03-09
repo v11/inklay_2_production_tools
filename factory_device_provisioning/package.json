@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "use:beta": "bash ./scripts/switch-firebase-env.sh beta",
+    "use:prod": "bash ./scripts/switch-firebase-env.sh prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
